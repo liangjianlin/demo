@@ -48,6 +48,27 @@
                     <fork>true</fork>
                 </configuration>
             </plugin>
+            <!-- 添加docker-maven-plugin插件 -->
+            <plugin>
+                <groupId>com.spotify</groupId>
+                <artifactId>docker-maven-plugin</artifactId>
+                <version>1.2.0</version>
+                <configuration>
+                    <!-- 配置docker server 位置，否则默认127.0.0.1 -->
+                    <dockerHost>http://192.168.0.169:2375</dockerHost>
+                    <!-- imageName冒号前面为容器名，后面是容器版本号 -->
+                    <imageName>${project.artifactId}:${project.version}</imageName>
+                    <!-- Dockerfile 文件位置 -->
+                    <dockerDirectory>${project.basedir}</dockerDirectory>
+                    <resources>
+                        <resource>
+                            <targetPath>/</targetPath>
+                            <directory>${project.build.directory}</directory>
+                            <include>${project.build.finalName}.jar</include>
+                        </resource>
+                    </resources>
+                </configuration>
+            </plugin>
         </plugins>
     </build>
 
