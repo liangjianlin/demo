@@ -53,9 +53,18 @@
                 <groupId>com.spotify</groupId>
                 <artifactId>docker-maven-plugin</artifactId>
                 <version>1.2.0</version>
+                <executions>
+                    <execution>
+                        <id>default</id>
+                        <goals>
+                            <goal>build</goal>
+                            <goal>push</goal>
+                        </goals>
+                    </execution>
+                </executions>
                 <configuration>
                     <!-- 配置docker server 位置，否则默认127.0.0.1 -->
-                    <dockerHost>http://192.168.0.169:2375</dockerHost>
+                    <dockerHost>http://192.168.0.12:2375</dockerHost>
                     <!-- imageName冒号前面为容器名，后面是容器版本号 -->
                     <imageName>${project.artifactId}:${project.version}</imageName>
                     <!-- Dockerfile 文件位置 -->
