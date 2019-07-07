@@ -17,6 +17,7 @@ pipeline {
             steps {
                 echo 'Deploy'
                 sh 'pwd'
+                sh 'mvn spring-boot:run'
             }
         }
     }
