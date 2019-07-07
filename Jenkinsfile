@@ -4,7 +4,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Build'
-                ls
+                sh 'git clone https://github.com/liangjianlin/demo.git'
             }
         }
         stage('Test'){
@@ -15,6 +15,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'Deploy'
+                sh 'ls'
             }
         }
     }
