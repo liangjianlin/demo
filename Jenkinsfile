@@ -1,23 +1,20 @@
 pipeline {
-    agent any
+    agent none
     stages {
-        stage('Build') {
+        stage('Back-end') {
+            agent {
+                docker { image 'maven:3-alpine' }
+            }
             steps {
-                echo 'Build'
-                sh 'rm -rf demo'
-                sh 'git clone https://github.com/liangjianlin/demo.git'
+                sh 'mvn --version'
             }
         }
-        stage('Test'){
-            steps {
-               echo 'Test'
+        stage('Front-end') {
+            agent {
+                docker { image 'node:7-alpine' }
             }
-        }
-        stage('Deploy') {
             steps {
-                echo 'Deploy'
-                sh 'pwd'
-                sh 'mvn spring-boot:run'
+                sh 'node --version'
             }
         }
     }
