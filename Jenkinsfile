@@ -4,6 +4,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Build'
+                sh 'rm -rf demo'
                 sh 'git clone https://github.com/liangjianlin/demo.git'
             }
         }
