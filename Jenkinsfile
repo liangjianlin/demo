@@ -4,7 +4,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Build'
-                git clone https://github.com/liangjianlin/demo.git
+                ls
             }
         }
         stage('Test'){
@@ -15,7 +15,6 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'Deploy'
-                cd ./demo && mvn clean install
             }
         }
     }
