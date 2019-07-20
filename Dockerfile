@@ -1,5 +1,4 @@
-FROM openjdk:8
-VOLUME /tmp
-ADD /target/demo-0.0.1-SNAPSHOT.jar app.jar
-RUN bash -c 'touch /app.jar'
-ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/app.jar"]
+FROM openjdk:12-alpine
+COPY /root/svn/demo/target/demo-0.0.1-SNAPSHOT.jar /app
+WORKDIR /app
+CMD ["java", "-jar","demo-0.0.1-SNAPSHOT.jar"]
