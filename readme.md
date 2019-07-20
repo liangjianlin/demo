@@ -197,3 +197,15 @@ docker container start jenkins
 访问：http://[IP]:8888 输入密码初始化Jenkins，创建用户，创建成功。
 
 # Jenkins自动化部署
+
+# Portainer 安装部署
+查找镜像
+docker search portainer
+拉取镜像
+docker pull portainer/portainer
+运行镜像 
+docker run -d -p 9000:9000 --name portainer --restart always -v /var/run/docker.sock:/var/run/docker.sock -v /root/portainer/data:/data portainer/portainer
+
+
+# 问题：WARNING: IPv4 forwarding is disabled. Networking will not work.
+解决办法：https://www.2cto.com/net/201710/688466.html
