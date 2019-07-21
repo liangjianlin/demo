@@ -197,7 +197,8 @@ docker container start jenkins
 访问：http://[IP]:8888 输入密码初始化Jenkins，创建用户，创建成功。
 
 # Jenkins自动化部署
-
+## 远程执行shell脚本
+https://blog.csdn.net/bacteriumX/article/details/87094145
 # Portainer 安装部署
 查找镜像
 docker search portainer
