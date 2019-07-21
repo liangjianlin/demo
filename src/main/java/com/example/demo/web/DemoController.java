@@ -8,6 +8,6 @@ public class DemoController {
 
     @RequestMapping("/demo")
     public String helloWeb() {
-        return "Hello Web";
+        return "Hello Docker Web";
     }
 }
