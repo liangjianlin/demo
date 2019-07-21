@@ -1,4 +1,3 @@
-cd /root/svn/demo
 docker image rm -f springboot-app
 docker build --force-rm -t springboot-app .
 docker container rm -f springboot-app
